@@ -10,29 +10,50 @@ namespace Calculator
     {
         public void Dividing()
         {
-           
+
+            bool exist = false;
+            double sum = 0;
+
+            Console.WriteLine("Press Escape to exist\n");
+
             try
             {
-                Console.Write("Enter a number: ");
-                double a = double.Parse(Console.ReadLine());
+                do
+                {
+                    Console.Write("Enter a value: ");
+                    double num1 = double.Parse(Console.ReadLine());
 
-                Console.Write("Enter a number: ");
-                double b = double.Parse(Console.ReadLine());
+                    Console.Write("Enter a value: ");
+                    double num2 = double.Parse(Console.ReadLine());
 
-                double z = (a / b);
+                    sum = num1 / num2;
 
-                Console.WriteLine("{0} / {1} = {2}", a, b, z);
-                Console.ReadKey();
+                    Console.WriteLine(sum);
 
+                    var keyInfo = Console.ReadKey();
+
+                    switch (keyInfo.Key)
+                    {
+                        case ConsoleKey.Escape:
+                            exist = true;
+                            break;
+                    }
+
+                }
+                while (!exist);
 
             }
-            catch(FormatException)
+
+            catch (FormatException)
             {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("Invalid Input! Try Again");
+                Console.ResetColor();
                 Console.ReadKey();
                 Console.Clear();
 
                 Dividing();
+
             }
 
 

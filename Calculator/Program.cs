@@ -15,6 +15,7 @@ namespace Calculator
             Subtraction subtract = new Subtraction();
             Multiplication multiply = new Multiplication();
             Division divid = new Division();
+            SquareRoots squareRoots = new SquareRoots();
 
 
             //size of the console.
@@ -42,7 +43,7 @@ namespace Calculator
             Console.Clear();
 
             //function menu with arrow key selection
-            var menu = new Menu(new string[] { "Addition", "Subtraction", "Multiplication", "Division", "Exit" });
+            var menu = new Menu(new string[] { "Addition", "Subtraction", "Multiplication", "Division", "Square Roots", "Percentage", "Exit" });
             var menuPainter = new MenuPainter(menu);
 
             bool exist = false;
@@ -99,6 +100,9 @@ namespace Calculator
                     case "Division":
                         divid.Dividing();
                         break;
+                    case "Square Roots":
+                        squareRoots.SquareRooting();
+                        break;                        
                     case "Exit":
                         Console.WriteLine("Goodbye!");
                         Environment.Exit(0);
@@ -107,16 +111,9 @@ namespace Calculator
 
                 }
 
-
-
             }
             while (!exist);
-
-           
-
-
-
-
+                                                  
         }
 
     }

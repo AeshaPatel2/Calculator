@@ -10,29 +10,39 @@ namespace Calculator
     {
         public void Adding()
         {
-            try
-            {
-
-            Console.Write("Enter the number of values you'd like to add: ");
-            int numberOfValues = int.Parse(Console.ReadLine());
-
-            double[] valueStorage = new double[numberOfValues];
+            bool exist = false;
             double sum = 0;
 
-            for (int i = 0; i < numberOfValues; i++)
+            Console.WriteLine("Press Escape to exist\n");
+
+            try
             {
-                Console.Write("Enter a number: ");
-                valueStorage[i] = double.Parse(Console.ReadLine());
+                do
+                {
+                    Console.Write("Enter a value: ");
+                    double num1 = double.Parse(Console.ReadLine());
 
-                sum += valueStorage[i];
+                    Console.Write("Enter a value: ");
+                    double num2 = double.Parse(Console.ReadLine());
 
-                Console.WriteLine(sum);
-                             
+                    sum = num1 + num2;
+
+                    Console.WriteLine(sum);
+
+                    var keyInfo = Console.ReadKey();
+
+                    switch (keyInfo.Key)
+                    {
+                        case ConsoleKey.Escape:
+                            exist = true;
+                            break;
+                    }
+
+                }
+                while (!exist);
+
             }
 
-            Console.ReadKey();
-
-            }
             catch (FormatException)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -44,12 +54,13 @@ namespace Calculator
                 Adding();
 
             }
-                                                      
+
 
         }
 
     }
 }
+
 
 
 

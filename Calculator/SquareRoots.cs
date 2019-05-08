@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    class Subtraction
+    public class SquareRoots
     {
-        public void Subtracting()
+        public void SquareRooting()
         {
-
             bool exist = false;
             double sum = 0;
 
@@ -23,10 +22,7 @@ namespace Calculator
                     Console.Write("Enter a value: ");
                     double num1 = double.Parse(Console.ReadLine());
 
-                    Console.Write("Enter a value: ");
-                    double num2 = double.Parse(Console.ReadLine());
-
-                    sum = num1 - num2;
+                    sum = Math.Sqrt(num1);
 
                     Console.WriteLine(sum);
 
@@ -52,12 +48,11 @@ namespace Calculator
                 Console.ReadKey();
                 Console.Clear();
 
-                Subtracting();
+                SquareRooting();
 
             }
-
-
+            
         }
-
+        
     }
 }
