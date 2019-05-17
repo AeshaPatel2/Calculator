@@ -43,7 +43,7 @@ namespace Calculator
             Console.Clear();
 
             //function menu with arrow key selection
-            var menu = new Menu(new string[] { "Addition", "Subtraction", "Multiplication", "Division", "Square Roots", "Percentage", "Exit" });
+            var menu = new Menu(new string[] { "Addition", "Subtraction", "Multiplication", "Division", "Square Roots", "Exit" });
             var menuPainter = new MenuPainter(menu);
 
             bool exist = false;
@@ -102,7 +102,7 @@ namespace Calculator
                         break;
                     case "Square Roots":
                         squareRoots.SquareRooting();
-                        break;                        
+                        break; 
                     case "Exit":
                         Console.WriteLine("Goodbye!");
                         Environment.Exit(0);
